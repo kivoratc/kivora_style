@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kivora TC · ejemplo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../kivora.css">
+</head>
+<body>
+  <header class="k-header">
+    <div class="k-wrap k-header__bar">
+      <a class="k-brand" href="#"><span class="k-mark" role="img" aria-label="Logo"></span><span>Kivora TC</span></a>
+      <nav class="k-nav"><a href="#proyectos" aria-current="page">Proyectos</a><a href="#contacto">Contacto</a></nav>
+      <button class="k-icon-btn" data-k-theme-toggle aria-label="Cambiar tema">◐</button>
+    </div>
+  </header>
+
+  <main class="k-wrap">
+    <div class="k-hero">
+      <div class="k-stack">
+        <p class="k-eyebrow">Videojuegos y software</p>
+        <h1 class="k-h1">Hecho con paciencia.</h1>
+        <p class="k-lead">Ejemplo mínimo de la librería de estilo.</p>
+        <div class="k-row k-row--full">
+          <a class="k-btn k-btn--primary" href="#proyectos">Ver proyectos</a>
+          <a class="k-btn k-btn--secondary" href="#contacto">Contacto</a>
+        </div>
+      </div>
+      <div class="k-stage"><span class="k-mark k-spin" role="img" aria-label="Espiral"></span></div>
+    </div>
+
+    <div class="k-dissolve" aria-hidden="true"></div>
+
+    <section class="k-section" id="proyectos">
+      <div class="k-section__head"><h2 class="k-h2">Proyectos</h2></div>
+      <div class="k-grid">
+        <a class="k-card" href="#">
+          <div class="k-card__thumb"><span class="k-mark" style="left:-12%;top:-34%;transform:rotate(18deg)"></span><span class="k-card__tag">Juego · 2D</span></div>
+          <div class="k-card__body">
+            <h3 class="k-h3">Proyecto uno</h3>
+            <p>Descripción corta del proyecto.</p>
+            <div class="k-chips"><span class="k-chip k-chip--solid">En desarrollo</span><span class="k-chip">Web</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="k-section" id="contacto">
+      <div class="k-panel k-stack" style="max-width:420px">
+        <div class="k-field"><label for="correo">Correo</label><input class="k-input" id="correo" placeholder="tu@correo.com"></div>
+        <button class="k-btn k-btn--primary" type="button">Enviar</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="k-footer"><div class="k-wrap"><span>© 2026 Kivora TC</span></div></footer>
+
+  <script type="module" src="../js/theme.js"></script>
+  <script type="module" src="../js/dissolve.js"></script>
+</body>
+</html>

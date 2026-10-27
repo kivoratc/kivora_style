@@ -1,0 +1,25 @@
+/* Kivora TC · chips y etiquetas
+   Estados y categorías. Texto mono, forma de píldora. */
+
+.k-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--k-space-2);
+  margin-top: auto;
+}
+
+.k-chip {
+  display: inline-block;
+  padding: 6px 10px;
+  border: var(--k-border);
+  border-radius: var(--k-radius-pill);
+  background: transparent;
+  color: var(--k-muted);
+  font: 500 var(--k-text-xs) / 1 var(--k-font-mono);
+}
+
+.k-chip--solid {
+  background: var(--k-surface-2);
+  border-color: transparent;
+  color: var(--k-fg);
+}

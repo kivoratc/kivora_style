@@ -1,0 +1,35 @@
+/* Kivora TC · aviso breve (toast)
+   Una región fija abajo (.k-toast-region) y avisos dentro (.k-toast).
+   Los avisos se invierten (fondo claro en tema oscuro) para destacar sin color nuevo. */
+
+.k-toast-region {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--k-space-4) + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: grid;
+  justify-items: center;
+  gap: var(--k-space-2);
+  padding-inline: max(var(--k-space-4), env(safe-area-inset-left, 0px));
+  pointer-events: none;
+}
+
+.k-toast {
+  max-width: 100%;
+  padding: var(--k-space-3) var(--k-space-5);
+  border-radius: var(--k-radius-pill);
+  background: var(--k-accent);
+  color: var(--k-on-accent);
+  font-size: var(--k-text-sm);
+  font-weight: 600;
+  animation: k-toast-in var(--k-base) var(--k-ease);
+}
+
+@keyframes k-toast-in {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-toast { animation: none; }
+}

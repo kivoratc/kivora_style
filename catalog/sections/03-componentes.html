@@ -1,0 +1,121 @@
+<section class="k-section" id="componentes">
+  <div class="k-section__head">
+    <h2 class="k-h2">Componentes</h2>
+    <span class="cat-note">Prefijo k- en todas las clases</span>
+  </div>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Botones</h3>
+      <div class="cat-classes"><code>.k-btn</code><code>--primary</code><code>--secondary</code><code>--soft</code><code>.k-icon-btn</code></div></header>
+    <div class="cat-demo k-row">
+      <button class="k-btn k-btn--primary" type="button">Principal</button>
+      <button class="k-btn k-btn--secondary" type="button">Secundario</button>
+      <button class="k-btn k-btn--soft" type="button">Suave</button>
+      <button class="k-btn k-btn--primary" type="button" disabled>Desactivado</button>
+      <button class="k-icon-btn" type="button" data-k-theme-toggle aria-label="Cambiar tema">◐</button>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Campos</h3>
+      <div class="cat-classes"><code>.k-field</code><code>.k-input</code><code>.k-hint</code></div></header>
+    <div class="cat-demo k-grid k-grid--2">
+      <div class="k-field"><label for="c-nombre">Nombre del proyecto</label><input class="k-input" id="c-nombre" placeholder="Dark Dungeons"><p class="k-hint">Se muestra en la tarjeta.</p></div>
+      <div class="k-field"><label for="c-error">Correo</label><input class="k-input" id="c-error" value="correo@" aria-invalid="true"><p class="k-hint">Falta el dominio, por ejemplo @gmail.com.</p></div>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Interruptor y casilla</h3>
+      <div class="cat-classes"><code>.k-switch</code><code>.k-check</code></div></header>
+    <div class="cat-demo k-row">
+      <label class="k-switch"><input type="checkbox" checked><span class="k-switch__track"></span><span>Tema oscuro</span></label>
+      <label class="k-switch"><input type="checkbox"><span class="k-switch__track"></span><span>Animaciones</span></label>
+      <label class="k-check"><input type="checkbox" checked><span class="k-check__box"></span><span>Guardar versión</span></label>
+      <label class="k-check"><input type="checkbox"><span class="k-check__box"></span><span>Publicar ahora</span></label>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Etiquetas</h3>
+      <div class="cat-classes"><code>.k-chip</code><code>--solid</code><code>.k-chips</code></div></header>
+    <div class="cat-demo k-row">
+      <span class="k-chip k-chip--solid">En desarrollo</span><span class="k-chip k-chip--solid">2 versiones</span>
+      <span class="k-chip">Web</span><span class="k-chip">Escritorio</span><span class="k-chip">Juego · 2D</span>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Tarjeta y panel</h3>
+      <div class="cat-classes"><code>.k-card</code><code>__thumb</code><code>__body</code><code>__tag</code><code>.k-panel</code></div></header>
+    <div class="cat-demo k-grid k-grid--2">
+      <a class="k-card" href="#componentes">
+        <div class="k-card__thumb"><span class="k-mark" style="left:-12%;top:-34%;transform:rotate(18deg)"></span><span class="k-card__tag">Juego · 2D</span></div>
+        <div class="k-card__body">
+          <h3 class="k-h3">Proyecto de ejemplo</h3>
+          <p>Descripción corta de lo que hace el proyecto.</p>
+          <div class="k-chips"><span class="k-chip k-chip--solid">En desarrollo</span><span class="k-chip">Web</span></div>
+        </div>
+      </a>
+      <div class="k-panel k-stack">
+        <h3 class="k-h3">Panel</h3>
+        <p class="k-muted">Bloque con borde y sin miniatura, para ajustes, datos o formularios.</p>
+        <label class="k-switch"><input type="checkbox" checked><span class="k-switch__track"></span><span>Opción activa</span></label>
+      </div>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Cabecera y pie</h3>
+      <div class="cat-classes"><code>.k-header</code><code>.k-brand</code><code>.k-nav</code><code>.k-footer</code></div></header>
+    <div class="cat-demo cat-demo--flush">
+      <div class="k-header"><div class="k-header__bar cat-inner">
+        <a class="k-brand" href="#componentes"><span class="k-mark" role="img" aria-label="Logo"></span><span>Kivora TC</span></a>
+        <nav class="k-nav"><a href="#componentes" aria-current="page">Proyectos</a><a href="#componentes">Blog</a></nav>
+        <button class="k-icon-btn" type="button" data-k-theme-toggle aria-label="Cambiar tema">◐</button>
+      </div></div>
+      <div class="k-footer cat-footer"><span>© 2026 Kivora TC</span><a href="https://github.com/kivoratc" target="_blank" rel="noopener">GitHub</a></div>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Ventana modal</h3>
+      <div class="cat-classes"><code>.k-modal</code><code>__actions</code></div></header>
+    <div class="cat-demo k-row">
+      <button class="k-btn k-btn--primary" type="button" data-cat-open="demo-modal">Abrir ventana</button>
+      <span class="k-muted">Se cierra con Esc o con los botones.</span>
+    </div>
+    <dialog class="k-modal" id="demo-modal" aria-labelledby="demo-modal-title">
+      <form method="dialog" class="k-stack">
+        <h3 class="k-h3" id="demo-modal-title">¿Publicar el post?</h3>
+        <p class="k-muted">Se guardará una versión nueva con fecha y hora. La anterior se conserva.</p>
+        <div class="k-modal__actions">
+          <button class="k-btn k-btn--secondary" value="cancel">Cancelar</button>
+          <button class="k-btn k-btn--primary" value="ok" data-cat-toast="Publicado">Publicar</button>
+        </div>
+      </form>
+    </dialog>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Aviso breve</h3>
+      <div class="cat-classes"><code>.k-toast</code><code>.k-toast-region</code></div></header>
+    <div class="cat-demo k-row">
+      <button class="k-btn k-btn--soft" type="button" data-cat-toast="Publicado">Mostrar "Publicado"</button>
+      <button class="k-btn k-btn--soft" type="button" data-cat-toast="Versión guardada">Mostrar "Versión guardada"</button>
+    </div>
+  </article>
+
+  <article class="cat-item">
+    <header class="cat-item__head"><h3 class="k-h3">Estado vacío</h3>
+      <div class="cat-classes"><code>.k-empty</code><code>__art</code></div></header>
+    <div class="cat-demo">
+      <div class="k-empty">
+        <span class="k-mark k-empty__art" role="img" aria-label="Espiral"></span>
+        <h3 class="k-h3">Todavía no hay proyectos</h3>
+        <p>Cuando añadas el primero aparecerá aquí.</p>
+        <button class="k-btn k-btn--primary" type="button">Añadir proyecto</button>
+      </div>
+    </div>
+  </article>
+</section>

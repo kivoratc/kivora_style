@@ -1,0 +1,71 @@
+/* Kivora TC · cabecera y pie
+   Cabecera fija con la marca, navegación y cambio de tema.
+   En móvil la navegación pasa a una segunda fila. */
+
+.k-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--k-bg);
+  border-bottom: var(--k-border);
+}
+
+/* pinta la zona del notch para que nada se vea detrás */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  background: var(--k-bg);
+}
+
+.k-header__bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--k-space-5);
+  padding-block: 14px;
+}
+
+.k-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--k-space-3);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.k-brand .k-mark { width: 30px; height: 30px; }
+
+.k-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+
+.k-nav a {
+  padding: var(--k-space-2) 14px;
+  border-radius: var(--k-radius-pill);
+  color: var(--k-muted);
+  font-size: var(--k-text-sm);
+  font-weight: 500;
+  transition: color var(--k-fast), background var(--k-fast);
+}
+.k-nav a:hover { color: var(--k-fg); background: var(--k-surface-2); }
+.k-nav a[aria-current="page"] { color: var(--k-fg); }
+
+.k-footer {
+  margin-top: var(--k-space-8);
+  padding-top: var(--k-space-5);
+  border-top: var(--k-border);
+  color: var(--k-muted);
+  font-size: var(--k-text-sm);
+}
+.k-footer .k-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--k-space-4);
+}
+
+@media (max-width: 720px) {
+  .k-header__bar { grid-template-columns: 1fr auto; gap: 10px 12px; padding-block: var(--k-space-3); }
+  .k-nav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; margin-inline: -6px; }
+}

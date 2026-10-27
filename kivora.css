@@ -1,0 +1,17 @@
+/* Kivora TC · punto de entrada
+   Importa la librería completa. El orden importa: tokens primero. */
+
+@import url("./css/tokens.css");
+@import url("./css/base.css");
+@import url("./css/layout.css");
+@import url("./css/logo.css");
+@import url("./css/button.css");
+@import url("./css/card.css");
+@import url("./css/chip.css");
+@import url("./css/form.css");
+@import url("./css/toggle.css");
+@import url("./css/header.css");
+@import url("./css/modal.css");
+@import url("./css/toast.css");
+@import url("./css/empty.css");
+@import url("./css/motion.css");

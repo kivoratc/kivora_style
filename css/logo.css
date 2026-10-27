@@ -1,0 +1,46 @@
+/* Kivora TC · logo y firma de píxeles
+   .k-mark pinta el logo con el color de texto del tema (máscara),
+   así funciona igual en oscuro y en claro con un solo archivo. */
+
+:root { --k-logo: url("../assets/logo.png"); }
+
+.k-mark {
+  display: block;
+  background: var(--k-fg);
+  -webkit-mask: var(--k-logo) center / contain no-repeat;
+  mask: var(--k-logo) center / contain no-repeat;
+}
+
+/* Separador que se deshace en píxeles.
+   Se rellena con <i> de tamaño y opacidad decrecientes (ver js/dissolve.js). */
+.k-dissolve {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 14px;
+  padding-block: var(--k-space-2);
+  overflow: hidden;
+}
+
+.k-dissolve i {
+  flex: none;
+  background: var(--k-fg);
+  border-radius: 2px;
+}
+
+/* Escenario del logo grande de portada */
+.k-stage {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  max-height: 460px;
+  aspect-ratio: 1;
+  justify-self: center;
+  min-width: 0;
+}
+
+.k-stage .k-mark { position: absolute; inset: 12%; }
+
+@media (max-width: 720px) {
+  .k-stage { order: -1; max-width: 240px; justify-self: start; }
+}

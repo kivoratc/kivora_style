@@ -1,0 +1,49 @@
+/* Catálogo · estilos propios de la página (no forman parte de la librería).
+   Solo usan tokens; nada de colores sueltos. */
+
+code { font-family: var(--k-font-mono); }
+
+.cat-note { font: 400 13px / 1.4 var(--k-font-mono); color: var(--k-muted); }
+.cat-sub { margin: var(--k-space-6) 0 var(--k-space-4); }
+.cat-after { margin-top: var(--k-space-4); }
+
+/* color */
+.cat-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--k-space-4); }
+.cat-sw { display: grid; gap: 6px; min-width: 0; }
+.cat-sw__c { aspect-ratio: 3 / 2; border: var(--k-border); border-radius: var(--k-radius-sm); }
+.cat-sw b { font-size: var(--k-text-sm); font-weight: 600; }
+.cat-sw code, .cat-sw small { font: 400 12px / 1.4 var(--k-font-mono); color: var(--k-muted); overflow-wrap: anywhere; }
+
+/* tipografía */
+.cat-trow {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+  gap: var(--k-space-2) var(--k-space-4); padding-block: var(--k-space-4); border-bottom: var(--k-border);
+}
+.cat-trow > :first-child { min-width: 0; overflow-wrap: anywhere; }
+.cat-trow code, .cat-space code, .cat-radii code { font-size: 12px; color: var(--k-muted); }
+
+/* espaciado y radios */
+.cat-space { display: grid; gap: var(--k-space-3); }
+.cat-space div { display: flex; align-items: center; gap: var(--k-space-4); }
+.cat-space i { flex: none; height: 12px; border-radius: 2px; background: var(--k-fg); }
+.cat-radii { display: flex; flex-wrap: wrap; gap: var(--k-space-5); }
+.cat-radii div { display: grid; gap: var(--k-space-2); }
+.cat-radii span { display: block; width: 120px; height: 56px; border: 1px solid var(--k-muted); background: var(--k-surface); }
+
+/* ficha de componente */
+.cat-item { padding-block: var(--k-space-5); border-top: var(--k-border); }
+.cat-item__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--k-space-3); margin-bottom: var(--k-space-4); }
+.cat-classes { display: flex; flex-wrap: wrap; gap: 6px; }
+.cat-classes code { padding: 4px 8px; border: var(--k-border); border-radius: var(--k-radius-pill); font-size: 12px; color: var(--k-muted); }
+.cat-demo { min-width: 0; padding: var(--k-space-5); border: var(--k-border); border-radius: var(--k-radius); background: var(--k-bg); }
+.cat-demo--flush { padding: 0; overflow: hidden; }
+.cat-demo .k-header { position: static; }
+.cat-inner { padding-inline: var(--k-space-4); }
+.cat-footer { margin: 0; padding: var(--k-space-4); display: flex; justify-content: space-between; gap: var(--k-space-4); }
+
+/* firma */
+.cat-logo { width: 160px; height: 160px; }
+.cat-stage { max-width: 220px; justify-self: start; }
+.cat-ghost { position: relative; height: 140px; overflow: hidden; border-radius: var(--k-radius-sm); background: var(--k-surface-2); }
+.cat-ghost .k-mark { position: absolute; width: 70%; aspect-ratio: 1; background: var(--k-ghost); }
+.cat-list { margin: 0; padding-left: var(--k-space-5); display: grid; gap: var(--k-space-2); color: var(--k-muted); font-size: 15px; }

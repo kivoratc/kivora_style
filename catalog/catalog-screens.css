@@ -1,0 +1,34 @@
+/* Catálogo · maquetas de escritorio y móvil.
+   Son dibujos hechos con los componentes de la librería. */
+
+.cat-split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: var(--k-space-5); align-items: start; }
+
+.cat-window { overflow: hidden; border: var(--k-border); border-radius: var(--k-radius); background: var(--k-bg); min-width: 0; }
+.cat-window__bar { display: flex; align-items: center; gap: var(--k-space-2); padding: var(--k-space-3) var(--k-space-4); border-bottom: var(--k-border); background: var(--k-surface); }
+.cat-window__bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--k-line); }
+.cat-window__bar .k-eyebrow { margin-left: var(--k-space-3); }
+.cat-window__body { display: grid; grid-template-columns: 180px minmax(0, 1fr); }
+
+.cat-side { display: grid; align-content: start; gap: var(--k-space-5); padding: var(--k-space-5) var(--k-space-4); border-right: var(--k-border); background: var(--k-surface); }
+.cat-side .k-mark { width: 24px; height: 24px; }
+.cat-side__nav { display: grid; gap: var(--k-space-1); }
+.cat-side__nav a { padding: var(--k-space-2) var(--k-space-3); border-radius: var(--k-radius-sm); color: var(--k-muted); font-size: var(--k-text-sm); font-weight: 500; }
+.cat-side__nav a:hover { background: var(--k-surface-2); color: var(--k-fg); }
+.cat-side__nav a[aria-current="page"] { background: var(--k-surface-2); color: var(--k-fg); }
+
+.cat-main { padding: var(--k-space-5); min-width: 0; align-content: start; }
+.cat-item-row { display: flex; justify-content: space-between; align-items: center; gap: var(--k-space-3); padding: var(--k-space-3) var(--k-space-4); border: var(--k-border); border-radius: var(--k-radius-sm); background: var(--k-surface); font-size: 15px; }
+
+.cat-phone { width: 340px; max-width: 100%; justify-self: center; padding: 10px; border: var(--k-border); border-radius: 38px; background: var(--k-surface-2); }
+.cat-phone__screen { align-content: start; gap: var(--k-space-4); padding: var(--k-space-4); border-radius: 28px; background: var(--k-bg); min-height: 560px; }
+.cat-phone__bar { display: flex; justify-content: space-between; align-items: center; }
+.cat-phone .k-brand .k-mark { width: 26px; height: 26px; }
+.cat-phone__nav { justify-content: flex-start; margin-inline: -6px; }
+
+@media (max-width: 900px) {
+  .cat-split { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .cat-window__body { grid-template-columns: minmax(0, 1fr); }
+  .cat-side { border-right: 0; border-bottom: var(--k-border); }
+}

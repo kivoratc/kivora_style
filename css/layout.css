@@ -1,0 +1,55 @@
+/* Kivora TC · layout
+   Contenedor, secciones y rejillas. Todo se apila en una columna en móvil. */
+
+.k-wrap {
+  max-width: var(--k-wrap);
+  margin: 0 auto;
+}
+
+.k-section { padding-block: var(--k-space-8) var(--k-space-2); }
+
+.k-section__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--k-space-4);
+  margin-bottom: var(--k-space-5);
+}
+
+.k-stack { display: grid; gap: var(--k-space-4); }
+.k-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--k-space-3); }
+
+.k-grid {
+  display: grid;
+  gap: var(--k-space-4);
+  grid-template-columns: repeat(var(--k-cols, 3), minmax(0, 1fr));
+}
+
+.k-grid--2 { --k-cols: 2; }
+.k-grid--3 { --k-cols: 3; }
+
+.k-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: var(--k-space-6);
+  padding-block: var(--k-space-8) var(--k-space-7);
+}
+
+@media (max-width: 880px) {
+  .k-grid { --k-cols: 2; }
+}
+
+@media (max-width: 720px) {
+  .k-hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: var(--k-space-6);
+  }
+  .k-section { padding-block-start: var(--k-space-7); }
+}
+
+@media (max-width: 560px) {
+  .k-grid { --k-cols: 1; }
+  .k-row--full > * { flex: 1 1 100%; }
+}

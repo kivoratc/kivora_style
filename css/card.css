@@ -1,0 +1,72 @@
+/* Kivora TC · tarjetas
+   Borde fino, sin sombras. Solo la tarjeta interactiva se eleva al pasar el cursor. */
+
+.k-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--k-surface);
+  border: var(--k-border);
+  border-radius: var(--k-radius);
+  min-width: 0;
+}
+
+a.k-card {
+  transition: border-color var(--k-base) var(--k-ease),
+    transform var(--k-base) var(--k-ease);
+}
+a.k-card:hover {
+  border-color: var(--k-muted);
+  transform: translateY(-2px);
+}
+
+.k-card__thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--k-surface-2);
+}
+
+/* espiral fantasma como fondo de miniatura; usar con .k-mark */
+.k-card__thumb .k-mark {
+  position: absolute;
+  width: 88%;
+  aspect-ratio: 1;
+  background: var(--k-ghost);
+}
+
+.k-card__tag {
+  position: absolute;
+  left: var(--k-space-4);
+  bottom: var(--k-space-3);
+  font: 500 11px / 1 var(--k-font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-muted);
+}
+
+.k-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--k-space-3);
+  padding: var(--k-space-5);
+}
+
+.k-card__body p {
+  margin: 0;
+  color: var(--k-muted);
+  font-size: 15px;
+}
+
+.k-panel {
+  background: var(--k-surface);
+  border: var(--k-border);
+  border-radius: var(--k-radius);
+  padding: var(--k-space-5);
+  min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.k-card { transition: none; }
+}

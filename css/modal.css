@@ -1,0 +1,39 @@
+/* Kivora TC · ventana modal
+   Usa el elemento nativo <dialog>: abre con showModal(), cierra con Esc
+   o con un <form method="dialog">. El fondo se difumina con el color del tema. */
+
+.k-modal {
+  width: min(440px, calc(100% - var(--k-space-6)));
+  padding: var(--k-space-5);
+  border: var(--k-border);
+  border-radius: var(--k-radius);
+  background: var(--k-surface);
+  color: var(--k-fg);
+}
+
+.k-modal::backdrop {
+  background: color-mix(in srgb, var(--k-bg) 78%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+.k-modal[open] { animation: k-pop var(--k-base) var(--k-ease); }
+
+.k-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--k-space-3);
+  margin-top: var(--k-space-2);
+}
+
+@keyframes k-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+}
+
+@media (max-width: 560px) {
+  .k-modal__actions > * { flex: 1 1 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-modal[open] { animation: none; }
+}

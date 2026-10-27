@@ -1,0 +1,40 @@
+/* Kivora TC · formularios
+   Un campo = etiqueta arriba + entrada. Foco con borde de texto pleno. */
+
+.k-field {
+  display: grid;
+  gap: var(--k-space-2);
+}
+
+.k-field label {
+  color: var(--k-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.k-input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0 var(--k-space-4);
+  border: var(--k-border);
+  border-radius: var(--k-radius-sm);
+  background: var(--k-bg);
+  color: var(--k-fg);
+  font: 400 15px var(--k-font-body);
+}
+
+.k-input::placeholder { color: var(--k-muted); }
+
+.k-input:focus {
+  outline: none;
+  border-color: var(--k-fg);
+}
+
+.k-input[aria-invalid="true"] { border-color: var(--k-fg); border-style: dashed; }
+
+.k-hint {
+  margin: 0;
+  color: var(--k-muted);
+  font-size: 13px;
+}

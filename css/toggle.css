@@ -1,0 +1,92 @@
+/* Kivora TC · interruptor y casilla
+   Ambos son <label> con un <input type="checkbox"> real dentro:
+   funcionan con teclado y lectores de pantalla sin código extra. */
+
+.k-switch,
+.k-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--k-space-3);
+  min-height: var(--k-tap);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.k-switch input,
+.k-check input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* interruptor */
+.k-switch__track {
+  position: relative;
+  flex: none;
+  width: 44px;
+  height: 26px;
+  border: var(--k-border);
+  border-radius: var(--k-radius-pill);
+  background: var(--k-surface-2);
+  transition: background var(--k-fast) var(--k-ease);
+}
+
+.k-switch__track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--k-muted);
+  transition: transform var(--k-fast) var(--k-ease), background var(--k-fast);
+}
+
+.k-switch input:checked + .k-switch__track { background: var(--k-accent); border-color: var(--k-accent); }
+.k-switch input:checked + .k-switch__track::after { transform: translateX(18px); background: var(--k-on-accent); }
+
+/* casilla */
+.k-check__box {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--k-muted);
+  border-radius: 7px;
+  transition: background var(--k-fast) var(--k-ease);
+}
+
+.k-check__box::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid var(--k-on-accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform var(--k-fast) var(--k-ease);
+}
+
+.k-check input:checked + .k-check__box { background: var(--k-accent); border-color: var(--k-accent); }
+.k-check input:checked + .k-check__box::after { transform: rotate(45deg) scale(1); }
+
+/* foco visible en ambos */
+.k-switch input:focus-visible + .k-switch__track,
+.k-check input:focus-visible + .k-check__box {
+  outline: 2px solid var(--k-fg);
+  outline-offset: 3px;
+}
+
+.k-switch input:disabled ~ *,
+.k-check input:disabled ~ * { opacity: 0.45; cursor: not-allowed; }
+
+@media (prefers-reduced-motion: reduce) {
+  .k-switch__track,
+  .k-switch__track::after,
+  .k-check__box,
+  .k-check__box::after { transition: none; }
+}

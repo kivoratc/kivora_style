@@ -1,0 +1,27 @@
+/* Kivora TC · movimiento
+   Un solo momento orquestado: la espiral gira lento y los píxeles derivan.
+   Todo se apaga con prefers-reduced-motion. */
+
+@keyframes k-spin { to { transform: rotate(360deg); } }
+
+@keyframes k-drift {
+  to {
+    transform: translate(var(--dx, 10px), var(--dy, -12px));
+    opacity: var(--o2, 0.15);
+  }
+}
+
+.k-spin { animation: k-spin 90s linear infinite; }
+
+.k-bit {
+  position: absolute;
+  background: var(--k-fg);
+  border-radius: 2px;
+  opacity: 0.5;
+  animation: k-drift var(--t, 9s) ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .k-spin,
+  .k-bit { animation: none; }
+}

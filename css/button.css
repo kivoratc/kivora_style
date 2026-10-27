@@ -1,0 +1,59 @@
+/* Kivora TC · botones
+   Siempre redondeados por completo. Altura táctil mínima de 44 px. */
+
+.k-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--k-space-2);
+  height: 46px;
+  min-width: var(--k-tap);
+  padding: 0 var(--k-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--k-radius-pill);
+  font: 600 15px / 1 var(--k-font-body);
+  cursor: pointer;
+  transition: transform var(--k-fast) var(--k-ease),
+    background var(--k-fast) var(--k-ease),
+    border-color var(--k-fast) var(--k-ease);
+}
+
+.k-btn:active { transform: scale(0.98); }
+
+.k-btn--primary {
+  background: var(--k-accent);
+  color: var(--k-on-accent);
+}
+.k-btn--primary:hover { opacity: 0.88; }
+
+.k-btn--secondary {
+  background: transparent;
+  color: var(--k-fg);
+  border-color: var(--k-line);
+}
+.k-btn--secondary:hover { border-color: var(--k-muted); }
+
+.k-btn--soft {
+  background: var(--k-surface-2);
+  color: var(--k-fg);
+}
+.k-btn--soft:hover { background: var(--k-line); }
+
+.k-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.k-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: var(--k-border);
+  border-radius: var(--k-radius-pill);
+  background: var(--k-surface);
+  color: var(--k-fg);
+  cursor: pointer;
+}
+.k-icon-btn:hover { background: var(--k-surface-2); }
+.k-icon-btn svg { width: 17px; height: 17px; }
